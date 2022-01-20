@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+/* navbar starts here */
+.image-logo{
+    position: relative;
+}
+
+
+
+.header-margin{
+    /* margin-right: 20px; */
+    color: #D7011C;
+}
+.icon-s{
+    margin-right: 14px;
+    color: #fff;
+
+}
+.navbar-dark .navbar-nav .nav-link {
+color: #fff!important;
+}
+.dropdown-menu{
+    color: #fff;
+}
+.icons{
+    margin-right: 14px;
+    color: #D7011C;
+}
+a {
+    text-decoration: none;
+    /* color: black!important; */
+}
+/* main body starts here  */
+.images-ads{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    width: 800px;
+}
+.font-size{
+    font-size: 20px;
+}
+.font-color{
+    color: #fff;
+    background-color: #D7011C;
+}
+.news, .news1{
+
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+}
+.text-dor h2:hover{
+    color:#0F3F88 ;
+}
+.image {
+
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.image .img-hover-zoom img {
+    transform:scale(1);
+    transition: 0.3s ease-in-out;
+  }
+.image .img-hover-zoom:hover img {
+    transform: scale(1.2);
+  }
+.main-image, .main-image1{
+    height:400px;
+    width:600px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.topic-text{
+    text-align: center;
+    padding: 4px;
+}
+.nav-item a{
+    color: black;
+}
+.news-two{
+    position: relative;
+}
+.news h2{
+    position:absolute;
+    top:160px;
+    left: 84px;
+}
+
+.thumb-position{
+    position: relative;
+}
+.img-thumb{
+
+    position: absolute;
+    top: 39px;
+    left: 5px;
+    height: 70px;
+    width: 75px;
+}
+.card-title, .card-text{
+    color: black!important;
+}
+.image-fluid{
+    width: 100%;
+}
+/* international page starts here */
+.intern-text h2{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+.international-side li a{
+    color: black;
+    text-decoration: none;
+}
+/* international page ends here */
+/* entertainment page starts here */
+
+
+
+.entertainment-position{
+    position: relative;
+
+}
+.height{
+    height: 565px;
+}
+.image1 {
+    position: relative;
+    /*background: linear-gradient(rgb(232 235 239 / 0%),rgb(112 97 97 / 76%));*/
+}
+.image2 {
+    position: relative;
+    /*background: linear-gradient(rgb(232 235 239 / 0%),rgb(112 97 97 / 76%));*/
+}
+.image3 {
+    position: relative;
+    /*background: linear-gradient(rgb(232 235 239 / 0%),rgb(112 97 97 / 76%));*/
+}
+.image4 {
+    position: relative;
+    /*background: linear-gradient(rgb(232 235 239 / 0%),rgb(112 97 97 / 76%));*/
+}
+.image5 {
+    position: relative;
+    /*background: linear-gradient(rgb(232 235 239 / 0%),rgb(112 97 97 / 76%));*/
+}
+/*.ent-text{*/
+/*    position: absolute;*/
+/*    top: 174px ;*/
+/*    left: 9px;*/
+/*    color: #fff;*/
+
+/*}*/
+.page-item.active .page-link{
+    background-color: #0f3f88!important;
+    border-color: #0f3f88!important;
+    color: #fff !important;
+}
+.page-link {
+    color: #0f3f88!important;
+}
+/*.ent-text1{*/
+/*    position: absolute;*/
+/*    top: 400px ;*/
+/*    left: 21px;*/
+/*    color: #fff;*/
+
+/*}*/
+.content{
+font-size: 18px;
+}
+/* entertainment page ends here */
+/* politics page starts here */
+.politics-pos{
+    position: relative;
+}
+.poli-text{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+body {
+    background-color: #f7f6f6
+}
+
+.card {
+    border: none;
+    /*box-shadow: 5px 6px 6px 2px #e9ecef;*/
+    border-radius: 4px
+}
+
+.dots {
+    height: 4px;
+    width: 4px;
+    margin-bottom: 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block
+}
+
+.badge {
+    padding: 7px;
+    padding-right: 9px;
+    padding-left: 16px;
+    box-shadow: 5px 6px 6px 2px #e9ecef
+}
+
+.user-img {
+    margin-top: 4px
+}
+
+.check-icon {
+    font-size: 17px;
+    color: #c3bfbf;
+    top: 1px;
+    position: relative;
+    margin-left: 3px
+}
+
+.form-check-input {
+    margin-top: 6px;
+    margin-left: -24px !important;
+    cursor: pointer
+}
+
+.form-check-input:focus {
+    box-shadow: none
+}
+
+.icons i {
+    margin-left: 8px
+}
+
+.reply {
+    margin-left: 12px
+}
+
+.reply small {
+    color: #b7b4b4
+}
+
+.reply small:hover {
+    color: green;
+    cursor: pointer
+}
+/* politics page ends here */
+/* footer starts here  */
+.list{
+ list-style-type: none;
+ /* color: black; */
+ /* text-decoration: none; */
+}
+.list li a{
+    color: #fff;
+    text-align: center;
+
+
+}
+.footer-color{
+    background-color: #0F3F88;
+    padding: 30px;
+    color: #fff;
+
+}
+
+.footer-text ul li{
+color: #fff;
+list-style: none;
+text-align: center;
+background-color: #0F3F88;
+}
+.footer-heading, .footer-heading a{
+    text-align: center;
+}
+
+.logo{
+    /* position: absolute;
+    top: 39px;
+    left: -19px; */
+    /* margin-bottom: 20px!important; */
+
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #D7001B;
+    color: #fff;
+}
+.nav-link{
+    color: black;
+}
+a{
+    color: black!important;
+}
+/* footer ends here */
+
+/* responsive */
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+     padding-right: 0rem !important;
+    padding-left: 0rem !important;
+}
+}
+@media only screen and (max-width: 768px) {
+/* .logo{
+    position: absolute;
+    top: 6px;
+    left: 4px;
+} */
+
+}
+.header-ads img{
+    /* display: none; */
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
