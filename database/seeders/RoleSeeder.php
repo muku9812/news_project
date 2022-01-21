@@ -19,8 +19,6 @@ class RoleSeeder extends Seeder
             'status' => '1',
             'created_by' => '1',
             'key' => '1',
-
-
         ]);
     }
 }

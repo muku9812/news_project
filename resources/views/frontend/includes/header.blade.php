@@ -30,8 +30,9 @@
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-
+                                    <h1 class="text-justify"> ताजा अपडेट</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                                 </div>
 
                                 <div class="modal-body ">
@@ -44,11 +45,11 @@
                                                 <div class="card mb-3" style="max-width: 540px;">
                                                     <div class="row g-0">
                                                         <div class="col-md-4">
-                                                            <img src="{{asset('uploads/images/news/'.$break->feature_image)}}" class="img-fluid rounded-start" alt="{{$break->title}}">
+                                                            <img src="{{asset('uploads/images/news/'.$break->feature_image)}}" class="img-fluid rounded-start" alt="{{$break->title}}" width="100%">
                                                         </div>
                                                         <div class="col-md-8">
                                                             <div class="card-body">
-                                                                <h5 class="card-title"> {!! $break->title !!} </h5>
+                                                                <h5 class="card-title text-center" > {!! $break->title !!} </h5>
 
                                                             </div>
                                                         </div>
@@ -123,10 +124,10 @@
                         <a class="nav-link navbar-brand" href="{{route('politics')}}">राजनीति</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand " aria-current="page" href="coorporate.php">कर्पोरेट फोकस</a>
+                        <a class="nav-link navbar-brand " aria-current="page" href="{{route('corporate')}}">कर्पोरेट फोकस</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="news.php">समाचार</a>
+                        <a class="nav-link navbar-brand" href="{{route('samachar')}}">समाचार</a>
                     </li>
 
                     <li class="nav-item navbar-dark dropdown">
@@ -140,10 +141,10 @@
                         <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
 
 
-                            <li><a class="dropdown-item " href="sharebajar.php">सेयर बजार</a></li>
-                            <li><a class="dropdown-item" href="auto.php">अटो</a></li>
-                            <li><a class="dropdown-item" href="insurance.php">इन्स्योरेन्स</a></li>
-                            <li><a class="dropdown-item" href="industry.php">उधोग</a></li>
+                            <li><a class="dropdown-item " href="{{route('share')}}">सेयर बजार</a></li>
+{{--                            <li><a class="dropdown-item" href="auto.php">अटो</a></li>--}}
+                            <li><a class="dropdown-item" href="{{route('insurance')}}">इन्स्योरेन्स</a></li>
+                            <li><a class="dropdown-item" href="{{route('udyog')}}">उधोग</a></li>
 
                         </ul>
 
@@ -189,3 +190,4 @@
     </nav>
 </div>
 </div>
+</html>

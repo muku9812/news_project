@@ -112,6 +112,7 @@ class FrontendBaseController extends Controller
         $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['news'] = News::where('slug',$slug)->first();
+
         $data['news']->view_count=$data['news']->view_count +1;
         $data['news']->update();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -401,5 +402,123 @@ class FrontendBaseController extends Controller
         return view('frontend.sudurpashchim',compact('data','nepaliDate','international','cat'));
     }
 
+    public function share(){
 
+        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['row']= Setting::find(1);
+        $data['adds']=Advertisement::where('status','1')->get();
+        $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
+        $place=AddPlacement::where('name','Top Down')->where('status','1')->pluck('id');
+
+
+        $data['add_top']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',  $places)->take(1)->get();
+        $data['add_td']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',$place)->take(2)->get();
+        $year=carbon::now()->year;
+        $month=carbon::now()->month;
+        $day=carbon::now()->day;
+        $international=News::where('category_id','2')->orderby('id','desc')->get();
+        $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
+
+//        dd($dat);
+        $chk=Category::where('name','सेयर बजार')->pluck('id');
+        $cat=News::where('category_id',$chk)->orderby('id','desc')->paginate(9);
+        return view('frontend.share',compact('data','nepaliDate','international','cat'));
+    }
+
+
+    public function corporate(){
+
+        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['row']= Setting::find(1);
+        $data['adds']=Advertisement::where('status','1')->get();
+        $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
+        $place=AddPlacement::where('name','Top Down')->where('status','1')->pluck('id');
+
+
+        $data['add_top']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',  $places)->take(1)->get();
+        $data['add_td']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',$place)->take(2)->get();
+        $year=carbon::now()->year;
+        $month=carbon::now()->month;
+        $day=carbon::now()->day;
+        $international=News::where('category_id','2')->orderby('id','desc')->get();
+        $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
+
+//        dd($dat);
+
+        $cat=News::where('status','1')->orderby('view_count','desc')->paginate(9);
+        return view('frontend.corporate',compact('data','nepaliDate','international','cat'));
+    }
+
+    public function samachar(){
+
+        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['row']= Setting::find(1);
+        $data['adds']=Advertisement::where('status','1')->get();
+        $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
+        $place=AddPlacement::where('name','Top Down')->where('status','1')->pluck('id');
+
+
+        $data['add_top']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',  $places)->take(1)->get();
+        $data['add_td']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',$place)->take(2)->get();
+        $year=carbon::now()->year;
+        $month=carbon::now()->month;
+        $day=carbon::now()->day;
+        $international=News::where('category_id','2')->orderby('id','desc')->get();
+        $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
+
+//        dd($dat);
+        $dat=Category::Where('name','अन्य')->pluck('id');
+
+        $cat=News::where('status','1')->where('category_id',$dat)->paginate(9);
+        return view('frontend.samachar',compact('data','nepaliDate','international','cat'));
+    }
+
+
+    public function insurance(){
+
+        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['row']= Setting::find(1);
+        $data['adds']=Advertisement::where('status','1')->get();
+        $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
+        $place=AddPlacement::where('name','Top Down')->where('status','1')->pluck('id');
+
+
+        $data['add_top']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',  $places)->take(1)->get();
+        $data['add_td']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',$place)->take(2)->get();
+        $year=carbon::now()->year;
+        $month=carbon::now()->month;
+        $day=carbon::now()->day;
+        $international=News::where('category_id','2')->orderby('id','desc')->get();
+        $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
+
+//        dd($dat);
+        $dat=Category::Where('name','इन्स्योरेन्स')->pluck('id');
+
+        $cat=News::where('status','1')->where('category_id',$dat)->paginate(9);
+        return view('frontend.insurance',compact('data','nepaliDate','international','cat'));
+    }
+
+    public function udyog(){
+
+        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['row']= Setting::find(1);
+        $data['adds']=Advertisement::where('status','1')->get();
+        $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
+        $place=AddPlacement::where('name','Top Down')->where('status','1')->pluck('id');
+
+
+        $data['add_top']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',  $places)->take(1)->get();
+        $data['add_td']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',$place)->take(2)->get();
+        $year=carbon::now()->year;
+        $month=carbon::now()->month;
+        $day=carbon::now()->day;
+        $international=News::where('category_id','2')->orderby('id','desc')->get();
+        $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
+
+//        dd($dat);
+        $dat=Category::Where('name','उधोग')->pluck('id');
+
+        $cat=News::where('status','1')->where('category_id',$dat)->paginate(9);
+        return view('frontend.udyog',compact('data','nepaliDate','international','cat'));
+    }
 }

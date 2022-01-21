@@ -44,6 +44,11 @@ Route::get('gandaki/', [FrontendBaseController::class,'gandaki'])->name('gandaki
 Route::get('lumbini/', [FrontendBaseController::class,'lumbini'])->name('lumbini');
 Route::get('karnali/', [FrontendBaseController::class,'karnali'])->name('karnali');
 Route::get('sudurpashchim/', [FrontendBaseController::class,'sudurpashchim'])->name('sudurpashchim');
+Route::get('share/', [FrontendBaseController::class,'share'])->name('share');
+Route::get('corporate/', [FrontendBaseController::class,'corporate'])->name('corporate');
+Route::get('samachar/', [FrontendBaseController::class,'samachar'])->name('samachar');
+Route::get('insurance/', [FrontendBaseController::class,'insurance'])->name('insurance');
+Route::get('udyog/', [FrontendBaseController::class,'udyog'])->name('udyog');
 
 Auth::routes([
   //  'register' => false,
@@ -53,7 +58,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('user/profile', [UserController::class, 'profile'])->name('user.profile');
 
 
-Route::middleware(['web','auth'])->group(function() {
+Route::middleware(['web','auth','role_permission'])->group(function() {
 
 
 

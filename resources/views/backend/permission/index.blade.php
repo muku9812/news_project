@@ -54,12 +54,12 @@
                                     <input data-id="{{$row->id}}" class="toggle-class-p1" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="Deactive" {{ $row->status ? 'checked' : '' }} >
                                 </td>
                                 <td>
-                                    <a href="{{route('permission.show',$row->id)}}" class="btn btn-success btn-sm">View</a>
-                                    <a href="{{route('permission.edit',$row->id)}}" class="btn btn-primary btn-sm">Update</a>
+                                    <a href="{{route('permission.show',$row->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="{{route('permission.edit',$row->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
                                     <form action="{{route('permission.destroy',$row->id)}}" method="post" class="d-inline">
                                         <input type="hidden" name="_method" value="delete" />
                                         @csrf
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
                                     </form>
                                 </td>

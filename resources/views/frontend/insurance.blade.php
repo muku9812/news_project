@@ -6,7 +6,7 @@
             <img src="{{asset('uploads/images/advertisement/'.$add->image)}}" alt="ads1" class="img-fliud img-thumbnail" width="100%">
         @endforeach
     </div>
-    <h1 class="text-left mt-5 ">खेलकुद</h1>
+    <h1 class="text-left mt-5 ">इन्स्योरेन्स</h1>
 
 </div>
 </div>

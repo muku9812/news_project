@@ -96,8 +96,8 @@
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-6 footer-text">
                     <ul class="">
-                        <li>+977-1-4790176</li>
-                        <li>news@onlinekhabar.com</li>
+                        <li>{{$data['row']->phone}}</li>
+                        <li>{{$data['row']->gmail}}</li>
                     </ul>
                 </div>
 

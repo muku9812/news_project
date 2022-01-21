@@ -75,9 +75,7 @@
             @endforeach
         </div>
 {{--<div class="text-left">--}}
-    <h1 class="text-left mt-5 ">सुदुरपश्चिम</h1>
-
-
+    <h1 class="text-left mt-5 "> सेयर बजार</h1>
 </div>
     </div>
 </div>

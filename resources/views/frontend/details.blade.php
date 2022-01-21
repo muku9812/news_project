@@ -57,11 +57,16 @@
 
 
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+
             @foreach($data['adds'] as $add)
             <a href="{{$add->link}}" target="_blank">
             <img src="{{asset('uploads/images/advertisement/'.$add->image)}}" alt="ADVERSISEMENT" class="img-fluid img-thumbnail">
             </a>
             @endforeach
+            <div>
+
+            </div>
+
         </div>
 
     </div>
@@ -73,7 +78,13 @@
 {{--    </figure>--}}
 {{--</div>--}}
 
-
+<div class="image-ads container" style="justify-content:center;">
+    @foreach($data['add_top'] as $add)
+    <figure>
+        <img src="{{asset('uploads/images/advertisement/'.$add->image)}}" alt="ADVERTISEMENT" class="img-fluid img-thumbnail" width="65%">
+    </figure>
+    @endforeach
+</div>
 <div class="comments pb-5 ml-3">
     <div class="container mt-5">
         <div class="row d-flex ">
