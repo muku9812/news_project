@@ -39,7 +39,7 @@
 
                         {{-- image start--}}
                         <div class="form-group">
-                            <label for="image">Image</label>
+                            <label for="image_file">Image</label>
                             <input type="file"  class="form-control" name="image_file" id="image_file" value={{asset('uploads/images/advertisement/'.$data['row']->image)}} >
                             <img src="{{asset('uploads/images/advertisement/'.$data['row']->image)}}" height="100px" width="100px" alt="image">
 
@@ -53,7 +53,7 @@
                         {{-- expire_date start--}}
                         <div class="form-group">
                             <label for="expire_date">Expire On</label>
-                            <input type="text"  class="form-control" name="expire_date" id="expire_date" min="<?php echo date("Y-m-d"); ?>" value={{$data['row']->expire_date}} >
+                            <input type="date"  class="form-control" name="expire_date" id="expire_date" min="<?php echo date("Y-m-d"); ?>" value={{$data['row']->expire_date}} >
                             @error('expire_date')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -86,30 +86,6 @@
                         </div>
                         {{-- link end--}}
 
-                        {{--                        status start--}}
-                        <div class="form-group">
-                            <label for="status">Status </label>
-                            @if ( $data['row']->status== 0 )
-                                <div class="form-check form-check-inline">
-                                    <input  type="radio"  name='status' id="active" value="1" >Active
-                                    <input  type="radio" name='status' id="deactive" value="0" checked> Deactive
-
-                                </div>
-                            @else
-                                <div class="form-check form-check-inline">
-
-                                    <input type="radio"  name='status' id="active" value="1" checked>Active
-                                    <input type="radio" name='status' id="deactive" value="0" >Deactive
-                                </div>
-                            @endif
-
-                                </div>
-                                @error('status')
-                                <p class="text-danger">{{ $message }}</p>
-                                @enderror
-                        </div>
-                {{-- status end--}}
-
 
 
                 {{-- updated_by start--}}
@@ -131,9 +107,8 @@
                 </div>
                 <!-- /.card -->
             </div>
-
         </section>
-        <!-- /.content -->
     </div>
+        <!-- /.content -->
 
 @endsection

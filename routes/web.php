@@ -13,6 +13,7 @@ use App\Http\Controllers\backend\PageController;
 use App\Http\Controllers\backend\ModuleController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\AddsPlacementController;
+use App\Http\Controllers\backend\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,7 @@ Route::get('corporate/', [FrontendBaseController::class,'corporate'])->name('cor
 Route::get('samachar/', [FrontendBaseController::class,'samachar'])->name('samachar');
 Route::get('insurance/', [FrontendBaseController::class,'insurance'])->name('insurance');
 Route::get('udyog/', [FrontendBaseController::class,'udyog'])->name('udyog');
+Route::get('education/', [FrontendBaseController::class,'education'])->name('education');
 
 Auth::routes([
   //  'register' => false,
@@ -58,7 +60,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('user/profile', [UserController::class, 'profile'])->name('user.profile');
 
 
-Route::middleware(['web','auth','role_permission'])->group(function() {
+Route::middleware(['web','auth'])->group(function() {
 
 
 
@@ -133,6 +135,11 @@ Route::get('news/{id}', [NewsController::class, 'show'])->name('news.show');
 Route::get('news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
 Route::put('news/{id}/edit', [NewsController::class, 'update'])->name('news.update');
 Route::delete('news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+
+
+
+Route::post('comment', [CommentController::class, 'store'])->name('comment.store');
+
 
 
 

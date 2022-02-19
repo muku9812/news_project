@@ -190,7 +190,7 @@ font-size: 18px;
     left: 20px;
 }
 body {
-    background-color: #f7f6f6
+    background-color:#ffffff
 }
 
 .card {
@@ -322,7 +322,26 @@ a{
     /* display: none; */
 }
 
+.nav_margin{
+    padding-right: 15px;
+}
+
+fieldset legend h1.d-flex {
+    margin: auto!important;
+    text-align: center;
+    display: revert!important;
+}
+
 @media only screen and (min-width: 768px) {
 
+}
+
+footer.footer-color .card {
+    background: none;
+    text-align: center;
+}
+
+footer.footer-color p.card-text, footer.footer-color h5.card-title {
+    color: #ffffff!important;
 }
 

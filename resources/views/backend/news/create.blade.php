@@ -45,6 +45,26 @@
                         </div>
                         {{-- slug end--}}
 
+                        {{-- meta tag start--}}
+                        <div class="form-group">
+                            <label for="meta_tag">Meta Tag</label>
+                            <input type="text" class="form-control" placeholder="Enter meta tag " name="meta_tag" id="meta_tag">
+                            @error('meta_tag')
+                            <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        {{-- meta tag end--}}
+
+                        {{-- meta_description start--}}
+                        <div class="form-group">
+                            <label for="meta_description">Meta Description</label>
+                            <textarea type="text" class="form-control" name="meta_description" id="meta_description" value="{{old('meta_description')}}" ></textarea>
+                            @error('meta_description')
+                            <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        {{-- Meta_description end--}}
+
                         {{-- image start--}}
                         <div class="form-group">
                             <label for="image_file">Feature Image</label>
@@ -193,6 +213,7 @@
     <script>
         CKEDITOR.replace( 'description' );
         CKEDITOR.replace( 'short_description' );
+        CKEDITOR.replace( 'meta_description' );
 //
 // function makeSlug() {
 //     var title = document.getElementById('title').value;

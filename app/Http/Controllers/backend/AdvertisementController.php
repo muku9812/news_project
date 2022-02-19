@@ -7,6 +7,7 @@ use App\Http\Requests\AdvertisementRequest;
 use App\Models\AddPlacement;
 use App\Models\Advertisement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AdvertisementController extends Controller
 {
@@ -104,11 +105,19 @@ class AdvertisementController extends Controller
             request()->session()->flash('error','Invalid Request');
             return redirect()->route('advertisement.index');
         }
-        if ($data['row']->update($request->all())) {
-            $request->session()->flash('success', 'Advertisement update Successfully');
-        } else {
-            $request->session()->flash('error', 'Advertisement Update failed');
+        $file = $request->file('image_file');
+        if ($request->hasFile("image_file")) {
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads/images/advertisement'), $fileName);
+            $request->request->add(['image' => $fileName]);
+            File::delete(public_path() . 'uploads/images/advertisement/'. $data['row']->image); // Delete old flyer
 
+            if ($data['row']->update($request->all())) {
+
+                $request->session()->flash('success', 'Advertisement updated Successfully');
+            } else {
+                $request->session()->flash('error', 'Advertisement update failed');
+            }
         }
         return redirect()->route('advertisement.index');
     }
@@ -124,6 +133,7 @@ class AdvertisementController extends Controller
         $data['row'] =Advertisement::find($id);
         if ($data['row']) {
             if ($data['row']->delete()) {
+                File::delete(public_path() . 'uploads/images/advertisement/'. $data['row']->image); // Delete old flyer
                 request()->session()->flash('success', 'Advertisement Deleted Successfully');
 
             } else {

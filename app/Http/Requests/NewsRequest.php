@@ -30,6 +30,7 @@ class NewsRequest extends FormRequest
             'category_id' => 'required',
             'description'=>'required',
 
+
         ];
     }
 }

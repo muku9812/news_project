@@ -11,7 +11,7 @@ class News extends Model
     protected $table = 'news';
 
 
-    protected $fillable = ['title','slug','feature_image','short_description','description','category_id','feature_key','breaking_key','slider_key','status','pradesh','created_by','updated_by'];
+    protected $fillable = ['title','slug','feature_image','short_description','description','category_id','feature_key','breaking_key','slider_key','status','pradesh','meta_description','meta_tag','created_by','updated_by'];
 
 
     public function UserId(){

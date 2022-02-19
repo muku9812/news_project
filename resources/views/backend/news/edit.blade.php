@@ -47,6 +47,27 @@
                         </div>
                         {{-- slug end--}}
 
+                        {{-- meta-tag start--}}
+                        <div class="form-group">
+                            <label for="slug">Meta Tag</label>
+                            <input type="text" class="form-control"name="meta_tag" id="meta_tag" value={{$data['row']->meta_tag}} >
+                            @error('meta_tag')
+                            <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        {{-- meta-tag end--}}
+
+
+                        {{-- meta_description start--}}
+                        <div class="form-group" class="col-sm-2">
+                            <label for="meta_description">Meta Description</label>
+                            <textarea type="text" class="form-control"  name="meta_description" id="meta_description" > {!! ($data['row']->meta_description) !!}</textarea>
+
+                            @error('meta_description')
+                            <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        {{-- meta_description end--}}
 
                         {{--category start--}}
                         <div class="form-group">

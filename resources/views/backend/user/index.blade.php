@@ -24,18 +24,14 @@
                 <div class="card">
 
                     <div class="card-body">
-                        @if(Session::has('success'))
-                            <p class="alert alert-success">{{Session::get('success')}}</p>
-                        @endif
-                        @if(Session::has('error'))
-                            <p class="alert alert-danger">{{Session::get('danger')}}</p>
-                        @endif
+
                         <table id="datatable" class="table table-striped" style="width:100%" >
                             <thead>
                             <tr>
                                 <th>SN</th>
                                 <th>Name</th>
-                                <th>email</th>
+                                <th>Email</th>
+                                <th>Role</th>
                                 <td>Action</td>
 
                             </tr>
@@ -47,6 +43,14 @@
                                     <td>{{$i+1}}</td>
                                     <td>{{$row->name}}</td>
                                     <td>{{$row->email}}</td>
+
+                                    <td>
+                                        @if($row->role_id == NULL)
+                                            Role not Define
+                                        @else
+                                        {{$row->RoleId->name}}
+                                        @endif
+                                    </td>
 
                                     <td>
                                         <a href="#" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>

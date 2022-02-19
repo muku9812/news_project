@@ -7,7 +7,7 @@
         @endforeach
     </div>
     <div>
-    <h1 class="text-left mt-5 ">मनोरञ्जन</h1>
+    <h1 class="text-left mt-5 ">शिक्षा</h1>
 
 </div>
 </div>

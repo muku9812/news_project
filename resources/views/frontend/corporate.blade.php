@@ -6,7 +6,8 @@
             <img src="{{asset('uploads/images/advertisement/'.$add->image)}}" alt="ads1" class="img-fliud img-thumbnail" width="100%">
         @endforeach
     </div>
-    <h1 class="text-left mt-5 ">खेलकुद</h1>
+    <h1 class="text-left mt-5 ">
+        कर्पोरेट फोकस</h1>
 
 </div>
 </div>
@@ -20,11 +21,11 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <a href="{{route('details',$intr->slug)}}">
                     <div class="card">
-                        <img src="{{asset('uploads/images/news/'.$intr->feature_image)}}" class="card-img-top" alt="...">
+                        <img src="{{asset('uploads/images/news/'.$intr->feature_image)}}" class="card-img-top" alt="..." height="300px">
                         <div class="card-body">
                             <h5 class="card-title">{{$intr->title}}</h5>
 
-                            <span class="blog-title ml-2" style="font-weight: 500;  padding-right: 14px; color: #807d7d; font-size: 16px;"><i class="fa icons fa-clock-o" aria-hidden="true"></i>१ घण्टा अगाडि</span>
+                            <span class="blog-title ml-2" style="font-weight: 500;  padding-right: 14px; color: #807d7d; font-size: 16px;"><i class="fa icons fa-clock-o" aria-hidden="true"></i>{{ $intr->created_at->diffForHumans() }}</span>
                             <p class="card-text">{!! $intr->short_description !!}</p>
                         </div>
                     </div>

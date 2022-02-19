@@ -53,14 +53,29 @@
                         {{--                        image end--}}
 
 
+                        {{--                        meta_description start--}}
+                        <tr>
+                            <th>Meta Description</th>
+                            <td>{!! $data['row']->meta_description !!}</td>
+                        </tr>
+                        {{--                        meta_description end--}}
+
+
+                        {{--                        meta_description start--}}
+                        <tr>
+                            <th>Meta Tag</th>
+                            <td>{!! $data['row']->meta_tag !!}</td>
+                        </tr>
+                        {{--                        meta_tag end--}}
+
+
                         {{--                        short_description start--}}
-
-
                         <tr>
                             <th>Short Description</th>
                             <td>{!! $data['row']->short_description !!}</td>
                         </tr>
                         {{--                        short_description end--}}
+
 
 
                         {{--                        description start--}}

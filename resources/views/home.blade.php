@@ -73,6 +73,45 @@
         </a>
     </div>
 </div>
+<div class="row" style="padding-left:40px; padding-top: 2% ">
+    <div class="col-xl-3 col-md-6 mb-4" style="width: 24%; height:100px;   ">
+        <a href="#">
+
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">News Post by you</div>
+                        <div class="col-auto">
+                            <i class="fas fa-newspaper fa-2x"></i></div>
+                        <div class="col mr-1">
+                            <div class="h5 mb-2 font-weight-bold text-gray-1000">{{$data['count']}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4" style="width: 24%; height:100px;   ">
+        <a href="#">
+
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">No.of Post In this Month</div>
+                        <div class="col-auto">
+                            <i class="fas fa-newspaper fa-2x"></i></div>
+                        <div class="col mr-1">
+                            <div class="h5 mb-2 font-weight-bold text-gray-1000">{{  $data['count_post']}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+</div>
+
 
 @endsection
 

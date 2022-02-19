@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SettingRequest;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class SettingController extends Controller
 {
@@ -118,7 +119,7 @@ class SettingController extends Controller
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('uploads/images/setting/logo'), $fileName);
             $request->request->add(['logo' => $fileName]);
-
+            File::delete(public_path() . '/uploads/images/setting/logo/'. $data['row']->image); // Delete old flyer
             if ($data['row']->update($request->all())) {
 
                 $request->session()->flash('success', 'Setting updated Successfully');

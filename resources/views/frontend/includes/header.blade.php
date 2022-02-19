@@ -85,14 +85,23 @@
 </div>
 
 <div class="container">
-    <div class="row justify-content-center align-items-center">
-        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 ">
+    <div class="row justify-content-lg-start align-items-sm-start">
+        <div class="row ">
+            <div class="col-3" style="padding-top: 20px;">
             <a href="{{route('index')}}">
-
-            <figure class="image-logo mt-4 mb-5">
-                <img src="{{asset('uploads/images/setting/logo/'.$data['row']->logo)}}" alt="Logo" class="img-fluid     ">
+            <figure  >
+                <img src="{{asset('uploads/images/setting/logo/'.$data['row']->logo)}}" alt="Logo" class="img-fluid">
             </figure>
             </a>
+            </div>
+
+                <div class=" col-9" style="padding-left: 40px";>
+                            @foreach($data['add_top'] as $add)
+                                <figure class="img-thubmail">
+                                    <img src="{{asset('uploads/images/advertisement/'.$add->image)}}" alt="ADVERSISEMENT" width="100%">
+                                </figure>
+                            @endforeach
+                </div>
 
         </div>
     </div>
@@ -100,38 +109,40 @@
 </div>
 {{--<div class="row justify-content-center align-items-center w-100" >--}}
     <div class="col-xl-12 col-lg-9 col-md-9 col-sm-12   col-12 ">
-        @foreach($data['add_top'] as $add)
-            <figure class="img-thubmail">
-                <img src="{{asset('uploads/images/advertisement/'.$add->image)}}" alt="ADVERSISEMENT" width="100%">
-            </figure>
-        @endforeach
+{{--        @foreach($data['add_top'] as $add)--}}
+{{--            <figure class="img-thubmail">--}}
+{{--                <img src="{{asset('uploads/images/advertisement/'.$add->image)}}" alt="ADVERSISEMENT" width="100%">--}}
+{{--            </figure>--}}
+{{--        @endforeach--}}
     </div>
 {{--</div>--}}
 <div class="">
     <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#0F3F88; ">
-        <div class="container-fluid">
+        <div class="container">
 
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto m-auto  mb-2 mb-lg-0">
-                    <li class="nav-item header-margin">
-                        <a class="nav-link navbar-brand " aria-current="page" href="{{route('index')}}">मुख्य पाना</a>
+                <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+                    <li class="nav-item header-margin nav_margin" >
+                        <a class="nav-link navbar-brand "  aria-current="page" href="{{route('index')}}">मुख्य पाना</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="{{route('politics')}}">राजनीति</a>
+                    <li class="nav-item nav_margin">
+                        <a class="nav-link navbar-brand " href="{{route('politics')}}">राजनीति</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item nav_margin">
                         <a class="nav-link navbar-brand " aria-current="page" href="{{route('corporate')}}">कर्पोरेट फोकस</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="{{route('samachar')}}">समाचार</a>
+                    <li class="nav-item nav_margin">
+                        <a class="nav-link navbar-brand " href="{{route('samachar')}}">समाचार</a>
                     </li>
 
-                    <li class="nav-item navbar-dark dropdown">
-                        <a class="nav-link navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item navbar-dark dropdown nav_margin">
+                        <a class="nav-link navbar-brand dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             बैंकिंग
                         </a>
 
@@ -149,8 +160,8 @@
                         </ul>
 
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown nav_margin">
+                        <a class="nav-link navbar-brand dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             प्रदेश
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -166,13 +177,13 @@
                     <li class="nav-item dropdown">
 
 
-                    <li class="nav-item">
+                    <li class="nav-item nav_margin">
                         <a class="nav-link navbar-brand " aria-current="page" href="{{route('entertainment')}}">मनोरञ्जन</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-brand" href="{{route('international')}}">अन्तर्राष्ट्रिय</a>
+                    <li class="nav-item nav_margin">
+                        <a class="nav-link navbar-brand " href="{{route('international')}}">अन्तर्राष्ट्रिय</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item nav_margin">
                         <a class="nav-link navbar-brand " aria-current="page" href="{{route('sports')}}">खेलकुद</a>
                     </li>
                     </li>

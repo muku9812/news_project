@@ -31,7 +31,7 @@
 {{--                            <th>Short Description</th>--}}
 {{--                            <th>Description</th>--}}
                             <th>Feature Key</th>
-                            <th>Slider Key</th>
+                            <th>Hot News</th>
                             <th>Breaking Key</th>
                             <th>Status</th>
 {{--                            <th>Created By</th>--}}
@@ -103,7 +103,7 @@
 {{--                                    @endif--}}
 {{--                                </td>--}}
 {{--                                <td>{{$row->UserId->name}}</td>--}}
-                                <td>
+                                <td style="width: 100px">
                                     <a href="{{route('news.show',$row->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                     <a href="{{route('news.edit',$row->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
                                     <form action="{{route('news.destroy',$row->id)}}" method="post" class="d-inline">

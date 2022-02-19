@@ -3,19 +3,27 @@
         <div class="row " style="--bs-gutter-x: 0px !important; margin-right:0px;">
             <div class="col-lg-3 col-md-3 col-sm-6">
                 <!-- <h4 class="footer-heading">समाचार</h4> -->
-                <ul class="list">
-                    <li class="footer-heading">
-                        <h4 class=""><a href="">समाचार</a></h4>
-                    </li>
-                    <li class="footer-heading"><a href="">समाज</a> </li>
-                    <li class="footer-heading"><a href="">विचार/ब्लग</a> </li>
-                    <li class="footer-heading"><a href="">साहित्य</a> </li>
-                    <li class="footer-heading"><a href="">अन्तर्वार्ता</a> </li>
-                    <li class="footer-heading"><a href="">खेलकुद़़</a> </li>
-                    <li class="footer-heading"><a href="">जीवनशैली/स्वास्थ्य</a> </li>
-                    <li class="footer-heading"><a href="">प्रवास</a> </li>
-                    <li class="footer-heading"><a href="">अन्तर्राष्ट्रिय</a> </li>
-                </ul>
+{{--                <ul class="list">--}}
+{{--                    <li class="footer-heading">--}}
+{{--                        <h4 class=""><a href="">समाचार</a></h4>--}}
+{{--                    </li>--}}
+{{--                    <li class="footer-heading"><a href="">समाज</a> </li>--}}
+{{--                    <li class="footer-heading"><a href="">विचार/ब्लग</a> </li>--}}
+{{--                    <li class="footer-heading"><a href="">साहित्य</a> </li>--}}
+{{--                    <li class="footer-heading"><a href="">अन्तर्वार्ता</a> </li>--}}
+{{--                    <li class="footer-heading"><a href="">खेलकुद़़</a> </li>--}}
+{{--                    <li class="footer-heading"><a href="">जीवनशैली/स्वास्थ्य</a> </li>--}}
+{{--                    <li class="footer-heading"><a href="">प्रवास</a> </li>--}}
+{{--                    <li class="footer-heading"><a href="">अन्तर्राष्ट्रिय</a> </li>--}}
+{{--                </ul>--}}
+                    <div class="card">
+                        <img src="https://merosamachar.com/wp-content/uploads/2021/09/name-logo.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-6">
@@ -91,7 +99,7 @@
                 <div class="col-md-3 col-lg-3 col-sm-6 footer-text">
                     <ul class="">
                         <li>सूचना विभाग दर्ता नं.</li>
-                        <li>२१४ / ०७३–७४</li>
+                        <li>{{$data['row']->pam_vat}}</li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-6 footer-text">

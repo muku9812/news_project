@@ -103,7 +103,7 @@
                                                 <div class="form-group row">
                                                     <label for="image_file" class="col-sm-2 col-form-label">Change Image</label>
                                                     <div class="col-sm-10">
-                                                    <input type="file" class="form-control"   name="image_file" id="image_file">
+                                                    <input type="file" class="form-control"   name="image_file" id="image_file" value="{{asset('backend/assets/images/users/').auth()->user()->image}}">
                                                     </div>
                                                 </div>
                                                 {{-- image end--}}

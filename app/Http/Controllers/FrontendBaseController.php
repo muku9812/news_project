@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\AddPlacement;
 use App\Models\Advertisement;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Setting;
-use Illuminate\Http\Request;
 use App\Models\News;
 use Krishnahimself\DateConverter\DateConverter;
 use Carbon\Carbon;
@@ -14,14 +14,14 @@ use Carbon\Carbon;
 class FrontendBaseController extends Controller
 {
     public function index(){
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
        $data['new'] = News::latest()->take(3)->where('status','1')->where('feature_key','1')->get();
         $data['news'] = News::all();
         $data['slide']=News::where('slider_key','1')->get();
-        $data['breaking']=News::Where('breaking_key','1')->latest()->take(7)->where('status','1')->get();
-        $data['break']=News::where('breaking_key','1')->latest()->skip(1)->take(4)->where('status','1')->get();
-        $data['latest_break'] = News::latest()->skip(5)->take(4)->where('status','1')->get();
+        $data['breaking']=News::Where('breaking_key','1')->orderBy('id','desc')->take(7)->where('status','1')->get();
+        $data['break']=News::where('breaking_key','1')->orderBy('id','desc')->skip(1)->take(4)->where('status','1')->get();
+        $data['latest_break'] = News::where('breaking_key','1')->orderBy('created_at','desc')->skip(5)->take(4)->where('status','1')->get();
         $data['category']=Category::all();
         $data['features']=News::where('breaking_key','1')->latest()->take(1)->where('status','1')->get();
 //        $ent=Category::where('name','मनोरन्जन')->pluck('id');
@@ -43,7 +43,7 @@ class FrontendBaseController extends Controller
         $data['international1']=News::Where('category_id',$inter1)->where('status','1')->latest()->take(1)->get();
 
         $sport1=Category::where('name','खेलकुद')->pluck('id');
-        $data['sport1']=News::Where('category_id',$sport1)->where('status','1')->latest()->take(1)->get();
+        $data['sport1']=News::Where('category_id',$sport1)->where('status','1')->latest()->take(3)->get();
 
 //        $sport2=Category::where('name','खेलकुद')->pluck('id');
         $data['sport2']=News::Where('category_id',$sport1)->where('status','1')->latest()->skip(1)->take(2)->get();
@@ -106,23 +106,38 @@ class FrontendBaseController extends Controller
         $place=AddPlacement::where('name','Top Right')->where('status','1')->pluck('id');
         $data['addss']=Advertisement::where('status','1')->where('expire_date','>',now())->take(3)->where('placement_id',$place)->get();
         $data['addsss']=Advertisement::where('status','1')->where('expire_date','>',now())->take(2)->where('placement_id',$place)->get();
+
+        $down=AddPlacement::where('name','Index Down')->where('status','1')->pluck('id');
+        $data['index_down']=Advertisement::where('status','1')->where('expire_date','>',now())->take(4)->where('placement_id',$down)->get();
+
+
         return view('frontend.index',compact('data','nepaliDate'));
     }
     public function details($slug){
         $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['news'] = News::where('slug',$slug)->first();
-
         $data['news']->view_count=$data['news']->view_count +1;
         $data['news']->update();
+        $data['category']=Category::all();
+        $skip=News::where('slug',$slug)->pluck('id');
+        $data['cate']=News::where('Category_id', $data['news']->CategoryId->id)->where('status','1')->take(4)->orderBy('id','desc')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
         $place=AddPlacement::where('name','Top Right')->where('status','1')->pluck('id');
         $data['adds']=Advertisement::where('status','1')->where('expire_date','>',now())->take(2)->where('placement_id',$place)->get();
         $data['add_top']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',$places)->take(1)->get();
+        $down=AddPlacement::where('name','Details Down')->where('status','1')->pluck('id');
+        $data['details_down1']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',$down)->take(1)->latest()->get();
+        $data['details_down']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',$down)->take(2)->skip(1)->latest()->get();
         $year=carbon::now()->year;
         $month=carbon::now()->month;
         $day=carbon::now()->day;
         $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
+
+
+        $data['comm'] = News::where('slug',$slug)->pluck('id');
+        $data['comment']=Comment::where('news_id',$data['comm']  )->take(3)->orderBy('id','desc')->get();
+
 //      dd($data);
         return view('frontend.details',compact('data','nepaliDate'));
     }
@@ -132,7 +147,7 @@ class FrontendBaseController extends Controller
     }
     public function categori(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -148,7 +163,7 @@ class FrontendBaseController extends Controller
 
     public function politics(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -164,7 +179,7 @@ class FrontendBaseController extends Controller
         $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
         $dat=Category::where('name','राजनीति')->pluck('id');
 //        dd($dat);
-        $cat=News::where('category_id',$dat)->paginate(9);
+        $cat=News::where('category_id',$dat)->orderBy('created_at','desc')->paginate(9);
 
 
 
@@ -172,7 +187,7 @@ class FrontendBaseController extends Controller
     }
     public function entertainment(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -187,7 +202,7 @@ class FrontendBaseController extends Controller
         $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
         $dat=Category::where('name','मनोरञ्जन')->pluck('id');
 //        dd($dat);
-        $cat=News::where('category_id',$dat)->paginate(9);
+        $cat=News::where('category_id',$dat)->orderBy('created_at','desc')->paginate(9);
 
 
 
@@ -196,7 +211,7 @@ class FrontendBaseController extends Controller
 
     public function sports(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $place=AddPlacement::where('name','Top Down')->where('status','1')->pluck('id');
@@ -211,14 +226,14 @@ class FrontendBaseController extends Controller
         $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
         $dat=Category::where('name','खेलकुद')->pluck('id');
 //        dd($dat);
-        $cat=News::where('category_id',$dat)->paginate(9);
+        $cat=News::where('category_id',$dat)->orderBy('created_at','desc')->paginate(9);
 
 
 
         return view('frontend.sports',compact('data','nepaliDate','international','cat'));
     }
     public function international(){
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -234,7 +249,7 @@ class FrontendBaseController extends Controller
         $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
         $dat=Category::where('name','अन्तर्राष्ट्रिय')->pluck('id');
 //        dd($dat);
-        $cat=News::where('category_id',$dat)->paginate(9);
+        $cat=News::where('category_id',$dat)->orderBy('created_at','desc')->paginate(9);
 
 
 
@@ -242,7 +257,7 @@ class FrontendBaseController extends Controller
     }
     public function pradesh1(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -266,7 +281,7 @@ class FrontendBaseController extends Controller
     }
     public function pradesh2(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -291,7 +306,7 @@ class FrontendBaseController extends Controller
 
     public function bagmati(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -314,7 +329,7 @@ class FrontendBaseController extends Controller
 
     public function gandaki(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -337,7 +352,7 @@ class FrontendBaseController extends Controller
 
     public function lumbini(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -360,7 +375,7 @@ class FrontendBaseController extends Controller
 
     public function karnali(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -382,7 +397,7 @@ class FrontendBaseController extends Controller
 
     public function sudurpashchim(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -404,7 +419,7 @@ class FrontendBaseController extends Controller
 
     public function share(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -428,7 +443,7 @@ class FrontendBaseController extends Controller
 
     public function corporate(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -451,7 +466,7 @@ class FrontendBaseController extends Controller
 
     public function samachar(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -469,14 +484,14 @@ class FrontendBaseController extends Controller
 //        dd($dat);
         $dat=Category::Where('name','अन्य')->pluck('id');
 
-        $cat=News::where('status','1')->where('category_id',$dat)->paginate(9);
+        $cat=News::where('category_id',$dat)->orderBy('created_at','desc')->paginate(9);
         return view('frontend.samachar',compact('data','nepaliDate','international','cat'));
     }
 
 
     public function insurance(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -494,13 +509,13 @@ class FrontendBaseController extends Controller
 //        dd($dat);
         $dat=Category::Where('name','इन्स्योरेन्स')->pluck('id');
 
-        $cat=News::where('status','1')->where('category_id',$dat)->paginate(9);
+        $cat=News::where('category_id',$dat)->orderBy('created_at','desc')->paginate(9);
         return view('frontend.insurance',compact('data','nepaliDate','international','cat'));
     }
 
     public function udyog(){
 
-        $data['brk']= News::where('feature_key','1')->latest()->take(9)->get();
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
         $data['row']= Setting::find(1);
         $data['adds']=Advertisement::where('status','1')->get();
         $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
@@ -518,7 +533,28 @@ class FrontendBaseController extends Controller
 //        dd($dat);
         $dat=Category::Where('name','उधोग')->pluck('id');
 
-        $cat=News::where('status','1')->where('category_id',$dat)->paginate(9);
+        $cat=News::where('category_id',$dat)->orderBy('created_at','desc')->paginate(9);
         return view('frontend.udyog',compact('data','nepaliDate','international','cat'));
+    }
+    public function education(){
+
+        $data['brk']= News::where('slider_key','1')->latest()->take(9)->get();
+        $data['row']= Setting::find(1);
+        $data['adds']=Advertisement::where('status','1')->get();
+        $places=AddPlacement::where('name','Top')->where('status','1')->pluck('id');
+        $place=AddPlacement::where('name','Top Down')->where('status','1')->pluck('id');
+
+
+        $data['add_top']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',  $places)->take(1)->get();
+        $data['add_td']=Advertisement::where('status','1')->where('expire_date','>',now())->where('placement_id',$place)->take(2)->get();
+        $year=carbon::now()->year;
+        $month=carbon::now()->month;
+        $day=carbon::now()->day;
+        $international=News::where('category_id','2')->orderby('id','desc')->get();
+        $nepaliDate = DateConverter::fromEnglishDate($year,$month,$day)->toFormattedNepaliDate();
+
+         $dat=Category::Where('name','शिक्षा')->pluck('id');
+        $cat=News::where('category_id',$dat)->orderBy('created_at','desc')->paginate(9);
+        return view('frontend.education',compact('data','nepaliDate','international','cat'));
     }
 }

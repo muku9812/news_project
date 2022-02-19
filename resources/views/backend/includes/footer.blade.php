@@ -1,7 +1,7 @@
 <!-- footer -->
 <!-- ============================================================== -->
 <footer class="footer text-center">
-    © 2021 Monster Admin by <a href="#"></a>
+    Copyright © 2022 <a href="https://freelancernepal.com.np/" target="_blank">freelancerunit.</a>  All rights reserved <a href="#"></a>
 </footer>
 <!-- ============================================================== -->
 <!-- End footer -->

@@ -35,7 +35,7 @@
                             <th>Image</th>
                             <th>Expire Date</th>
                             <th>Link</th>
-                            <th>Status</th>
+
                             <th>Created By</th>
 
                             <td>Action</td>
@@ -54,13 +54,6 @@
                                 </td>
                                 <td>{{$row->expire_date}}</td>
                                 <td>{{$row->link}}</td>
-                                <td>
-                                    @if($row->status==1)
-                                        <p style="color:Green">Active</p>
-                                    @else
-                                        <p style="color:red">Deactive</p>
-                                    @endif
-                                </td>
                                 <td>{{$row->UserId->name}}</td>
                                 <td>
                                     <a href="{{route('advertisement.show',$row->id)}}" class="btn btn-success btn-sm">

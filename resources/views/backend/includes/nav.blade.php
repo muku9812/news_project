@@ -9,16 +9,16 @@
                 <b class="logo-icon">
                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                     <!-- Dark Logo icon -->
-                    <img src="{{asset('backend/assets/images/logo-icon.png')}}" alt="homepage" class="dark-logo" />
+                    <img src="{{asset('backend/assets/images/logo.jpg')}}" alt="homepage" class="dark-logo" height="100%" width="100%" />
 
                 </b>
-                <!--End Logo icon -->
-                <!-- Logo text -->
-                <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <img src="{{asset('backend/assets/images/logo-text.png')}}" alt="homepage" class="dark-logo" />
+{{--                <!--End Logo icon -->--}}
+{{--                <!-- Logo text -->--}}
+{{--                <span class="logo-text">--}}
+{{--                            <!-- dark Logo text -->--}}
+{{--                            <img src="{{asset('backend/assets/images/logo-text.png')}}" alt="homepage" class="dark-logo" />--}}
 
-                        </span>
+{{--                        </span>--}}
             </a>
             <!-- ============================================================== -->
             <!-- End Logo -->
@@ -42,12 +42,14 @@
                 <!-- Search -->
                 <!-- ============================================================== -->
 
-                <li class="nav-item hidden-sm-down">
-                    <form class="app-search ps-3">
-                        <input type="text" class="form-control" placeholder="Search for..."> <a
-                            class="srh-btn"><i class="ti-search"></i></a>
-                    </form>
-                </li>
+{{--                <li class="nav-item hidden-sm-down">--}}
+{{--                    <form class="app-search ps-3">--}}
+{{--                        <input type="text" class="form-control" placeholder="Search for..."> <a--}}
+{{--                            class="srh-btn"><i class="ti-search"></i></a>--}}
+{{--                    </form>--}}
+{{--                </li>--}}
+
+
             </ul>
 
             <!-- ============================================================== -->

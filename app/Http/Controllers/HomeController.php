@@ -8,6 +8,7 @@ use App\Models\Permission;
 use App\Models\Setting;
 use App\Models\User;
 use App\Models\News;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -37,6 +38,10 @@ class HomeController extends Controller
        $data['setting'] =Setting::find(1);
         $data['permission'] =Permission::count();
         $data['active_adds'] = Advertisement::Where('status','1')->count();
+        $data['news_upload']=News::all();
+        $data['login_user_post']=News::where('created_by',Auth::id())->get();
+        $data['count']=News::where('created_by',Auth::id())->count();
+        $data['count_post']=News::whereMonth('created_at', Carbon::now()->month)->count();
         return view('home',compact('data'));
 
     }
