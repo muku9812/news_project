@@ -135,6 +135,7 @@ Route::get('news/{id}', [NewsController::class, 'show'])->name('news.show');
 Route::get('news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
 Route::put('news/{id}/edit', [NewsController::class, 'update'])->name('news.update');
 Route::delete('news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+Route::get('news-your-post', [NewsController::class, 'yourpost'])->name('news.test');
 
 
 

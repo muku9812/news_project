@@ -7,6 +7,7 @@ use App\Http\Requests\NewsRequest;
 use App\Models\Category;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 class NewsController extends Controller
@@ -21,6 +22,13 @@ class NewsController extends Controller
         $data=News::all();
         $data['rows'] = News::orderBy('id', 'DESC')->get();
         return view('backend.news.index',compact('data'));
+    }
+
+    public function yourpost()
+    {
+        $data=News::where('created_by',Auth::id())->get();
+        $data['rows'] = News::where('created_by',Auth::id())->orderBy('id', 'DESC')->get();
+        return view('backend.news.yourpost',compact('data'));
     }
 
     /**
@@ -41,13 +49,19 @@ class NewsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(NewsRequest $request)
-    {   $file = $request->file('image_file');
+    {
+        var_dump($request->category_id);
+//        dd($request->input('category_id'));
+//        dd($request->all());
+        $file = $request->file('image_file');
         if ($request->hasFile("image_file")) {
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('uploads/images/news'), $fileName);
             $request->request->add(['feature_image' => $fileName]);
         }
         $row = News::create($request->all());
+        $row->categories()->sync($request->input('category_id'));
+
         if($row){
             $request->session()->flash('success','News Created Successfully');
         } else{
@@ -175,4 +189,5 @@ class NewsController extends Controller
         $data['rows'] -> breaking_key=$request->breaking_key;
         $data['rows']  ->save();
     }
+
 }

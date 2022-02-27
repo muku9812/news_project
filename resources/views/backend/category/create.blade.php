@@ -28,7 +28,7 @@
 {{--                       {{-- Name start--}}
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" placeholder="Enter Category to add " name="name" id="name" value="{{old('name')}}" >
+                            <input type="text" class="form-control" placeholder="Enter Category to add " name="name" id="name" value="{{old('name')}}"  oninput="makeSlug();" >
                             @error('name')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -38,7 +38,7 @@
                         {{-- slug start--}}
                         <div class="form-group">
                             <label for="slug">Slug</label>
-                            <input type="text" class="form-control" name="slug" id="slug" value="{{old('slug')}}" >
+                            <input type="text" class="form-control" name="slug" id="slug" value="{{old('slug')}}" readonly>
                             @error('slug')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -92,3 +92,31 @@
 
 @endsection
 
+@section('js')
+    <script>
+        function makeSlug() {
+            var title = document.getElementById('name').value;
+            var slug = document.getElementById('slug');
+            slug.value = string_to_slug(title);
+        }
+        function string_to_slug(str) {
+            str = str.replace(/^\s+|\s+$/g, ''); // trim
+            str = str.toLowerCase();
+
+            // remove accents, swap ñ for n, etc
+            var from = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;";
+            var to   = "aaaaaeeeeeiiiiooooouuuunc------";
+            for (var i = 0, l = from.length; i < l; i++) {
+                str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+            }
+
+            str = str.replace(/\s+/g, '-') // collapse whitespace and replace by -
+                .replace(/\?/g, '-')
+                .replace(/-+/g, '-'); // collapse dashes
+
+            return str;
+        };
+    </script>
+
+
+@endsection

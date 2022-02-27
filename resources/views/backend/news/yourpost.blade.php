@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>News List</h1>
+                        <h1>News posted by you</h1>
                     <h2><a href="{{route('news.create')}}" class="btn btn-success btn-sm">Add News</a></h2>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
             <div class="card">
 
                 <div class="card-body">
-                    <table id="datatable" class="table table-striped" style="width:100%" >
+                    <table id="datatable" class="table table" style="width:100%" >
                         <thead>
                         <tr>
                             <th>SN</th>

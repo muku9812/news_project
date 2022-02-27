@@ -68,9 +68,10 @@
                             <th>Status</th>
                             <td>
                                 @if($data['row']->status==1)
-                                    <p style="color:Green">Active</p>
+                                   <h3><p style="color:Green">Active</p></h3>
                                 @else
-                                    <p style="color:red">Deactive</p>
+                                    <h3><p style="color:red">Deactive</p></h3>
+
                                 @endif
                             </td>
                         {{--                        Status end--}}

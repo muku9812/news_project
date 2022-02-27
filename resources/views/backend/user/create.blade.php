@@ -1,27 +1,27 @@
 @extends('layouts.backend')
 
 @section('content')
-    <div class="page-breadcrumb">
-        <div class="row align-items-center">
-            <div class="col-md-6 col-8 align-self-center">
-                <h3 class="page-title mb-0 p-0">Dashboard</h3>
-                <div class="d-flex align-items-center">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Home</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-            <div class="col-md-6 col-4 align-self-center">
-                <div class="text-end upgrade-btn">
-                    <a href="#"
-                       class="btn btn-success d-none d-md-inline-block text-white" target="_blank">Hello World</a>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="page-breadcrumb">--}}
+{{--        <div class="row align-items-center">--}}
+{{--            <div class="col-md-6 col-8 align-self-center">--}}
+{{--                <h3 class="page-title mb-0 p-0">Dashboard</h3>--}}
+{{--                <div class="d-flex align-items-center">--}}
+{{--                    <nav aria-label="breadcrumb">--}}
+{{--                        <ol class="breadcrumb">--}}
+{{--                            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>--}}
+{{--                            <li class="breadcrumb-item active" aria-current="page">Home</li>--}}
+{{--                        </ol>--}}
+{{--                    </nav>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-6 col-4 align-self-center">--}}
+{{--                <div class="text-end upgrade-btn">--}}
+{{--                    <a href="#"--}}
+{{--                       class="btn btn-success d-none d-md-inline-block text-white" target="_blank">Hello World</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -76,7 +76,7 @@
                         <div class="form-group row">
                             <label for="password" >Password</label>
                             <div class="col-sm-10">
-                            <input type="password" class="form-control" placeholder="Enter Password" name="password" id="password" value="{{old('password')}}" >
+                            <input type="password" crypt="bcrypt" class="form-control" placeholder="Enter Password" name="password" id="password" value="{{old('password')}}" >
                             @error('password')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror

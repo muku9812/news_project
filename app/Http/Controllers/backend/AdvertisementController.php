@@ -105,20 +105,35 @@ class AdvertisementController extends Controller
             request()->session()->flash('error','Invalid Request');
             return redirect()->route('advertisement.index');
         }
+//        $file = $request->file('image_file');
+//        if ($request->hasFile("image_file")) {
+//            $fileName = time() . '_' . $file->getClientOriginalName();
+//            $file->move(public_path('uploads/images/advertisement'), $fileName);
+//            $request->request->add(['image' => $fileName]);
+//            File::delete(public_path() . 'uploads/images/advertisement/'. $data['row']->image); // Delete old flyer
+//
+//            if ($data['row']->update($request->all())) {
+//
+//                $request->session()->flash('success', 'Advertisement updated Successfully');
+//            } else {
+//                $request->session()->flash('error', 'Advertisement update failed');
+//            }
+//        }
         $file = $request->file('image_file');
-        if ($request->hasFile("image_file")) {
+
+        if ($request->hasfile("image_file")) {
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('uploads/images/advertisement'), $fileName);
             $request->request->add(['image' => $fileName]);
-            File::delete(public_path() . 'uploads/images/advertisement/'. $data['row']->image); // Delete old flyer
-
-            if ($data['row']->update($request->all())) {
-
-                $request->session()->flash('success', 'Advertisement updated Successfully');
-            } else {
-                $request->session()->flash('error', 'Advertisement update failed');
-            }
+            File::delete(public_path() .  'uploads/images/advertisement/'. $data['row']->image); // Delete old flyer
         }
+        if ($data['row']->update($request->all())) {
+
+            $request->session()->flash('success', 'Advertisement updated Successfully');
+        } else {
+            $request->session()->flash('error', 'Advertisement update failed');
+        }
+
         return redirect()->route('advertisement.index');
     }
 

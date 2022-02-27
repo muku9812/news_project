@@ -1,204 +1,165 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
 <head>
-    <!-- Required meta tags -->
+
+    <title>एज दैनिक - नेपालको राष्ट्रिय </title>
+    <meta name="description" content="दैनिक - नेपालको राष्ट्रिय">
+
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@500&display=swap" rel="stylesheet">
+    <meta name="keywords" content="नेपालको राष्ट्रिय">
+    <meta name="author" content="Freelancer Unit Pvt. Ltd.">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico'); ?>"> -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/ticker-style.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/slicknav.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
-    <title>Home</title>
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/post-tab.css')}}">
+
+    <!-- Gallery News  -->
+    <!-- End Gallery News  -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/tab.css')}}">
+
 </head>
-<div class="container">
-    <div class="top-navbar">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <span class="icons header-margin">{{$nepaliDate}}</span>
-                <div>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        ताजा अपडेट
-                    </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="text-justify"> ताजा अपडेट</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<body oncontextmenu="return false;">
 
-                                </div>
 
-                                <div class="modal-body ">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            @foreach($data['brk'] as $break)
-
-                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
-                                                <a href="{{route('details',$break->slug)}}">
-                                                <div class="card mb-3" style="max-width: 540px;">
-                                                    <div class="row g-0">
-                                                        <div class="col-md-4">
-                                                            <img src="{{asset('uploads/images/news/'.$break->feature_image)}}" class="img-fluid rounded-start" alt="{{$break->title}}" width="100%">
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title text-center" > {!! $break->title !!} </h5>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </a>
-                                            </div>
-
-                                            @endforeach
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
+<header>
+    <!-- Header Start -->
+    <div class="header-area">
+        <div class="main-header ">
+            <div class="header-top black-bg d-none d-md-block">
+                <div class="container">
+                    <div class="col-xl-12">
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="header-info-left">
+                                <ul>
+                                    <li><img src="{{asset('frontend/assets/img/icon/header_icon1.png')}}" alt=""><span
+                                            id="nepali_full_date_2"></span> | <span id="real_clock_2">{{$nepaliDate}}</span></li>
+                                </ul>
+                            </div>
+                            <div class="header-info-right">
+                                <ul class="header-social">
+                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="d-flex">
-
-                    <a href="{{$data['row']->facebook}}" target="_blank"><i class="fa icons fa-facebook-official" aria-hidden="true"></i></a>
-                    <a href="{{$data['row']->twitter}}" target="_blank"><i class="fa icons  fa-twitter" aria-hidden="true"></i></a>
-                    <a href="{{$data['row']->youtube}}" target="_blank"><i class="fa icons fa-youtube-play" aria-hidden="true"></i></a>
-                </div>
-
             </div>
-        </nav>
-    </div>
-
-</div>
-</div>
-
-<div class="container">
-    <div class="row justify-content-lg-start align-items-sm-start">
-        <div class="row ">
-            <div class="col-3" style="padding-top: 20px;">
-            <a href="{{route('index')}}">
-            <figure  >
-                <img src="{{asset('uploads/images/setting/logo/'.$data['row']->logo)}}" alt="Logo" class="img-fluid">
-            </figure>
-            </a>
-            </div>
-
-                <div class=" col-9" style="padding-left: 40px";>
-                            @foreach($data['add_top'] as $add)
-                                <figure class="img-thubmail">
-                                    <img src="{{asset('uploads/images/advertisement/'.$add->image)}}" alt="ADVERSISEMENT" width="100%">
-                                </figure>
-                            @endforeach
+            <div class="header-mid d-none d-md-block">
+                <div class="container">
+                    <div class="row d-flex align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-4 col-lg-4 col-md-4">
+                            <div class="logo">
+                                <a href="index.php">
+                                    <img class="logo-lg-width" src="{{asset('frontend/assets/img/logo/logo.jpg')}}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8">
+                            <section id="ads">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="second banner">
+                                            <a href="#">
+                                                <img src="{{asset('frontend/assets/img/banner/2_1631000762.gif')}}" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
                 </div>
-
-        </div>
-    </div>
-
-</div>
-{{--<div class="row justify-content-center align-items-center w-100" >--}}
-    <div class="col-xl-12 col-lg-9 col-md-9 col-sm-12   col-12 ">
-{{--        @foreach($data['add_top'] as $add)--}}
-{{--            <figure class="img-thubmail">--}}
-{{--                <img src="{{asset('uploads/images/advertisement/'.$add->image)}}" alt="ADVERSISEMENT" width="100%">--}}
-{{--            </figure>--}}
-{{--        @endforeach--}}
-    </div>
-{{--</div>--}}
-<div class="">
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#0F3F88; ">
-        <div class="container">
-
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
-                    <li class="nav-item header-margin nav_margin" >
-                        <a class="nav-link navbar-brand "  aria-current="page" href="{{route('index')}}">मुख्य पाना</a>
-                    </li>
-                    <li class="nav-item nav_margin">
-                        <a class="nav-link navbar-brand " href="{{route('politics')}}">राजनीति</a>
-                    </li>
-                    <li class="nav-item nav_margin">
-                        <a class="nav-link navbar-brand " aria-current="page" href="{{route('corporate')}}">कर्पोरेट फोकस</a>
-                    </li>
-                    <li class="nav-item nav_margin">
-                        <a class="nav-link navbar-brand " href="{{route('samachar')}}">समाचार</a>
-                    </li>
-
-                    <li class="nav-item navbar-dark dropdown nav_margin">
-                        <a class="nav-link navbar-brand dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            बैंकिंग
-                        </a>
+            </div>
+            <div class="header-bottom header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-lg-12 col-md-12 header-flex">
+                            <!-- sticky -->
+                            <div class="sticky-logo">
+                                <a href="index.php"><img class="logo-sm-width" src="{{asset('frontend/assets/img/logo/logo.jpg')}}"
+                                                         alt=""></a>
+                            </div>
+                            <!-- Main-menu -->
+                            <div class="main-menu d-none d-md-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li>
+                                            <a href="{{route('index')}}">
+                                                    <span aria-hidden="true" class="fa fa-home"
+                                                          style="padding-right: 6px;"></span>
+                                            </a>
+                                        </li>
+                                        <li><a href="category.html">राजनीति</a></li>
+                                        <li><a href="category.html">बिजनेस</a></li>
+                                        <li><a href="category.html">समाचार</a></li>
 
 
+                                        <li><a href="#"> प्रदेश </a>
+                                            <ul class="submenu">
+                                                <li><a href="#">प्रदेश १</a></li>
+                                                <li><a href="#">मधेस प्रदेश</a></li>
+                                                <li><a href="#">बागमती</a></li>
+                                                <li><a href="#">गण्डकी</a></li>
+                                                <li><a href="#">लुम्बिनी</a></li>
+                                                <li><a href="#">कर्णाली</a></li>
+                                                <li><a href="#">सुदुरपश्चिम</a></li>
+                                            </ul>
+                                        </li>
+{{--                                        <li><a href="#"> बैंकिंग </a>--}}
+{{--                                            <ul class="submenu">--}}
+{{--                                                <li><a href="#">सेयर बजार</a></li>--}}
+{{--                                                <li><a href="#">इन्स्योरेन्स</a></li>--}}
+{{--                                                <li><a href="#">उधोग</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
 
 
-                        <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                        <li><a href="category.html">मनोरञ्जन</a></li>
+                                        <li><a href="category.html">अन्तर्राष्ट्रिय</a></li>
+                                        <li><a href="category.html">खेलकुद</a></li>
+                                        <li><a href="category.html">प्रवास</a></li>
+                                        <li><a href="category.html">सुरक्षा र अपराध</a></li>
 
+{{--                                        <li><a href="category.html">जीवन्शैली</a></li>--}}
 
-                            <li><a class="dropdown-item " href="{{route('share')}}">सेयर बजार</a></li>
-{{--                            <li><a class="dropdown-item" href="auto.php">अटो</a></li>--}}
-                            <li><a class="dropdown-item" href="{{route('insurance')}}">इन्स्योरेन्स</a></li>
-                            <li><a class="dropdown-item" href="{{route('udyog')}}">उधोग</a></li>
-
-                        </ul>
-
-                    </li>
-                    <li class="nav-item dropdown nav_margin">
-                        <a class="nav-link navbar-brand dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            प्रदेश
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item " href="{{route('pradesh1')}}"> प्रदेश १</a></li>
-                            <li><a class="dropdown-item " href="{{route('pradesh2')}}">मधेस प्रदेश</a></li>
-                            <li><a class="dropdown-item " href="{{route('bagmati')}}">बागमती</a></li>
-                            <li><a class="dropdown-item " href="{{route('gandaki')}}">गण्डकी</a></li>
-                            <li><a class="dropdown-item " href="{{route('lumbini')}}">लुम्बिनी</a></li>
-                            <li><a class="dropdown-item " href="{{route('karnali')}}">कर्णाली</a></li>
-                            <li><a class="dropdown-item " href="{{route('sudurpashchim')}}">सुदुरपश्चिम</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-
-
-                    <li class="nav-item nav_margin">
-                        <a class="nav-link navbar-brand " aria-current="page" href="{{route('entertainment')}}">मनोरञ्जन</a>
-                    </li>
-                    <li class="nav-item nav_margin">
-                        <a class="nav-link navbar-brand " href="{{route('international')}}">अन्तर्राष्ट्रिय</a>
-                    </li>
-                    <li class="nav-item nav_margin">
-                        <a class="nav-link navbar-brand " aria-current="page" href="{{route('sports')}}">खेलकुद</a>
-                    </li>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <a href=""><i class="fa icon-s  fa-clock-o" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa icon-s   fa-user-o" aria-hidden="true"></i></a>
-
-
-                    <a href=""><i class="fa  icon-s  fa-clone" aria-hidden="true"></i></a>
-
+                                        <li><a href="about_us.html">हाम्रो बारेमा</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-md-none"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
-</div>
-</div>
-</html>
+    </div>
+    <!-- Header End -->
+</header>

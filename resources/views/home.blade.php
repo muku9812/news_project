@@ -75,7 +75,7 @@
 </div>
 <div class="row" style="padding-left:40px; padding-top: 2% ">
     <div class="col-xl-3 col-md-6 mb-4" style="width: 24%; height:100px;   ">
-        <a href="#">
+        <a href="{{route('news.test')}}">
 
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">

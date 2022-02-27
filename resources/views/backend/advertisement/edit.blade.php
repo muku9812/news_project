@@ -22,7 +22,7 @@
 
                 <div class="card-body">
 
-                    <form action="{{route('advertisement.update',$data['row']->id)}}" method='POST'>
+                    <form action="{{route('advertisement.update',$data['row']->id)}}" enctype="multipart/form-data" method='POST'>
                         <input type="hidden" name="_method" value="PUT"/>
                         @csrf
 
@@ -40,7 +40,7 @@
                         {{-- image start--}}
                         <div class="form-group">
                             <label for="image_file">Image</label>
-                            <input type="file"  class="form-control" name="image_file" id="image_file" value={{asset('uploads/images/advertisement/'.$data['row']->image)}} >
+                            <input type="file"  class="form-control" name="image_file" id="image_file"  >
                             <img src="{{asset('uploads/images/advertisement/'.$data['row']->image)}}" height="100px" width="100px" alt="image">
 
                             @error('image_file')

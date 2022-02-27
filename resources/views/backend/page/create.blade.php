@@ -29,7 +29,7 @@
                         {{--                       {{-- title start--}}
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control" placeholder="Enter title for Page " name="title" id="title" value="{{old('title')}}" >
+                            <input type="text" class="form-control" placeholder="Enter title for Page " name="title" id="title" value="{{old('title')}}" oninput="makeSlug();" >
                             @error('title')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -39,7 +39,7 @@
                         {{-- slug start--}}
                         <div class="form-group">
                             <label for="slug">Slug</label>
-                            <input type="text" class="form-control" placeholder="Enter slug for Page " name="slug" id="slug" value="{{old('slug')}}" >
+                            <input type="text" class="form-control" placeholder="Enter slug for Page " name="slug" id="slug" value="{{old('slug')}}" readonly>
                             @error('slug')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
@@ -50,9 +50,7 @@
 
                         {{-- short_description start--}}
                         <div class="form-group">
-                            <label for="short_description">Short description</label>
-                            <input type="text" class="form-control" placeholder="Enter short description for page" name="short_description" id="short_description" value="{{old('short_description')}}" >
-                            @error('short_description')
+                            <label for="short_description">Short description</label><textarea class="form-control"  name="short_description" id="short_description" value="{{old('short_description')}}" ></textarea>@error('short_description')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
@@ -118,3 +116,35 @@
 
 @endsection
 
+@section('js')
+    <script>
+
+        CKEDITOR.replace( 'description' );
+        CKEDITOR.replace( 'short_description' );
+
+        function makeSlug() {
+            var title = document.getElementById('title').value;
+            var slug = document.getElementById('slug');
+            slug.value = string_to_slug(title);
+        }
+        function string_to_slug(str) {
+            str = str.replace(/^\s+|\s+$/g, ''); // trim
+            str = str.toLowerCase();
+
+            // remove accents, swap ñ for n, etc
+            var from = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;";
+            var to   = "aaaaaeeeeeiiiiooooouuuunc------";
+            for (var i = 0, l = from.length; i < l; i++) {
+                str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+            }
+
+            str = str.replace(/\s+/g, '-') // collapse whitespace and replace by -
+                .replace(/\?/g, '-')
+                .replace(/-+/g, '-'); // collapse dashes
+
+            return str;
+        };
+    </script>
+
+
+@endsection

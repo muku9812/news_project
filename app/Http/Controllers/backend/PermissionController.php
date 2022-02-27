@@ -11,7 +11,7 @@ class PermissionController extends Controller
 {
     public function index()
     {
-        $data['rows'] = Permission::all();
+        $data['rows'] = Permission::latest()->get();
         return view('backend.permission.index', compact('data'));
     }
 

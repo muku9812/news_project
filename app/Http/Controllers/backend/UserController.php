@@ -109,14 +109,14 @@ class UserController extends Controller
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('uploads/images/user/'), $fileName);
             $request->request->add(['image' => $fileName]);
-
+        }
             if ($data['row']->update($request->all())) {
 
                 $request->session()->flash('success', 'User Profile updated Successfully');
             } else {
                 $request->session()->flash('error', 'User Profile update failed');
             }
-        }
+
 
         return redirect()->route('user.profile');
     }

@@ -31,7 +31,7 @@
 {{--                            <th>Short Description</th>--}}
 {{--                            <th>Description</th>--}}
                             <th>Feature Key</th>
-                            <th>Hot News</th>
+                            <th>Slider News</th>
                             <th>Breaking Key</th>
                             <th>Status</th>
 {{--                            <th>Created By</th>--}}

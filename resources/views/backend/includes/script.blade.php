@@ -238,6 +238,26 @@ $(function(){
     });
 
 
+    // Add placement ajax
+    $(function(){
+        $('.toggle-class-pl1').change(function(){
+            var status = $(this).prop('checked')==true ? 1:0;
+            var row_id = $(this).data('id');
+            $.ajax({
+                type:'GET',
+                datatype:"jason",
+                url:'/placementchangestatus',
+                data:{'status':status,'row_id':row_id},
+                success : function(data){
+                    console.log(data.success)
+                }
+
+            });
+        });
+
+    });
+
+
 
     @if(Session::has('success'))
         toastr.options =

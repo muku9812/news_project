@@ -19,4 +19,8 @@ class Category extends Model
     public function UpdatedId(){
         return$this->belongsTo(User::class,'updated_by');
     }
+    public function  news(){
+        return $this->belongsToMany(News::class,);
+    }
+
 }

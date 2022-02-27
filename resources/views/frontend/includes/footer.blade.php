@@ -1,132 +1,168 @@
-<footer class="footer-color container-fluid pt-5">
-    <div class="">
-        <div class="row " style="--bs-gutter-x: 0px !important; margin-right:0px;">
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <!-- <h4 class="footer-heading">समाचार</h4> -->
-{{--                <ul class="list">--}}
-{{--                    <li class="footer-heading">--}}
-{{--                        <h4 class=""><a href="">समाचार</a></h4>--}}
-{{--                    </li>--}}
-{{--                    <li class="footer-heading"><a href="">समाज</a> </li>--}}
-{{--                    <li class="footer-heading"><a href="">विचार/ब्लग</a> </li>--}}
-{{--                    <li class="footer-heading"><a href="">साहित्य</a> </li>--}}
-{{--                    <li class="footer-heading"><a href="">अन्तर्वार्ता</a> </li>--}}
-{{--                    <li class="footer-heading"><a href="">खेलकुद़़</a> </li>--}}
-{{--                    <li class="footer-heading"><a href="">जीवनशैली/स्वास्थ्य</a> </li>--}}
-{{--                    <li class="footer-heading"><a href="">प्रवास</a> </li>--}}
-{{--                    <li class="footer-heading"><a href="">अन्तर्राष्ट्रिय</a> </li>--}}
-{{--                </ul>--}}
-                    <div class="card">
-                        <img src="https://merosamachar.com/wp-content/uploads/2021/09/name-logo.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="footer-tittle">
+                            <div class="footer-logo">
+                                <a href="index.php"><img class="logo-ft-width" src="assets/img/logo/logo.jpg"
+                                                         alt=""></a>
+                            </div>
+                            <div class="describe">
+                                <h6>
+                                    <li>प्रा.लि., तराई खबर , नेपाल</li>
+                                </h6>
+                                <div class="cr1">
+                                    पुरानो बानेश्वर, काठमाडौं<br>
+                                    <strong>सम्पादक</strong>
+                                    <br>________
+                                </div>
+                            </div>
                         </div>
                     </div>
-
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div id="footer_b3">
+                            <div class="clmn">
+                                <h1>सम्पर्क</h1>
+                                ०१-xxxxx<br>news@teraikhabar.com<br>
+                                <br>
+                                <h1>मार्केटिङ सम्पर्क </h1>
+                                ९८xxxxxxxx<br>
+                                marketing@teraikhabar.com<br>
+                                <div class="clear"></div>
+                                <div class="footer-social">
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6-col-sm-12">
+                        <h4>प्रदेश समाचार</h4>
+                        <ul>
+                            <li><a href="#">प्रदेश १</a></li>
+                            <li><a href="#">मधेस प्रदेश</a></li>
+                            <li><a href="#">बागमती</a></li>
+                            <li><a href="#">गण्डकी</a></li>
+                            <li><a href="#">लुम्बिनी</a></li>
+                            <li><a href="#">कर्णाली</a></li>
+                            <li><a href="#">सुदुरपश्चिम</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6-col-sm-12">
+                        <h4>राजनीति</h4>
+                        <ul>
+                            <li><a href="#">समाज</a> </li>
+                            <li><a href="#">विचार/ब्लग</a> </li>
+                            <li><a href="#">साहित्य</a> </li>
+                            <li><a href="#">अन्तर्वार्ता</a> </li>
+                            <li><a href="#">खेलकुद़़</a> </li>
+                            <li><a href="#">जीवनशैली/स्वास्थ्य</a> </li>
+                            <li><a href="#">प्रवास</a> </li>
+                            <li><a href="#">अन्तर्राष्ट्रिय</a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6-col-sm-12">
+                        <h4>बैंकिंग</h4>
+                        <ul>
+                            <li><a href="#">सेयर बजार</a> </li>
+                            <li><a href="#">विचार/ब्लग</a> </li>
+                            <li><a href="#">इन्स्योरेन्स</a> </li>
+                            <li><a href="#">अन्तर्वार्ता</a> </li>
+                            <li><a href="#">उधोग</a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
 
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <!-- <h4 class="footer-heading">अनलाइनखबर</h4> -->
-                <ul class="list">
-                    <li class="footer-heading">
-                        <h4 class=""><a href="">अनलाइनखबर</a></h4>
-                    </li>
-                    <li class="footer-heading"><a href="">हाम्रो टीम</a> </li>
-                    <li class="footer-heading"><a href="">प्रयोगका सर्त</a> </li>
-                    <li class="footer-heading"><a href="">विज्ञापन</a> </li>
-                    <li class="footer-heading"><a href="">प्राइभेसी पोलिसी</a> </li>
-                    <li class="footer-heading"><a href="">सम्पर्क</a> </li>
-
-                </ul>
+                </div>
             </div>
-
-
-
-            <div class="col-lg-3 col-md-3 col-sm-6">
-                <!-- <h4 class="footer-heading">विजनेस</h4> -->
-                <ul class="list">
-                    <li class="footer-heading">
-                        <h4 class=""><a href="">विजनेस</a></h4>
-                    </li>
-                    <li class="footer-heading"><a href="">बजार</a> </li>
-                    <li class="footer-heading"><a href="">रोजगार</a> </li>
-                    <li class="footer-heading"><a href="">बैँक / वित्त</a> </li>
-                    <li class="footer-heading"><a href="">अटो</a> </li>
-                    <li class="footer-heading"><a href="">सूचना-प्रविधि</a> </li>
-
-                </ul>
-            </div>
-
-
-            <div class="col-lg-3 col-md-3 col-sm-6">
-
-                <ul class="list">
-                    <li class="footer-heading">
-                        <h4 class=""><a href="">मनोरञ्जन</a></h4>
-                    </li>
-                    <li class="footer-heading"><a href="">समाज</a> </li>
-                    <li class="footer-heading"><a href="">ब्लोअप</a> </li>
-                    <li class="footer-heading"><a href="">बलिउड / हलिउड</a> </li>
-                    <li class="footer-heading"><a href="">भिडियो</a> </li>
-                    <li class="footer-heading"><a href="">ताजा समाचार</a> </li>
-
-                </ul>
-            </div>
-
         </div>
-
     </div>
-    <hr>
-
-    <div class="footer-bottom">
-        <div class="">
-            <div class="row">
-                <div class="col-md-3 col-lg-3 col-sm-6 footer-text">
-                    <ul class="">
-                        <li>अध्यक्ष तथा प्रबन्ध निर्देशक</li>
-                        <li>धर्मराज भुसाल</li>
-
-                    </ul>
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="footer-border">
+                <div class="row d-flex align-items-center justify-content-between">
+                    <div class="col-lg-6">
+                        <div class="footer-copy-right">
+                            <p class="copyright_text">&copy;
+                                <script>document.write(new Date().getFullYear());</script> <span
+                                    class="footer_highlight_color">Terai Khabar</span> | Powered by <a
+                                    href="https://freelancerunit.com.np" class="footer_highlight_color"
+                                    target="_blank">Freelancer Unit Nepal Pvt. Ltd.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer-menu f-right">
+                            <ul>
+                                <!-- <li><a href="#">Terms of use</a></li> -->
+                                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                                <li><a href="about_us.html">हाम्रो बारे</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 footer-text">
-                    <ul class="">
-                        <li>प्रधान सम्पादकः</li>
-                        <li>शिव गाउँले</li>
-                    </ul>
-
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 footer-text">
-                    <ul class="">
-                        <li>सूचना विभाग दर्ता नं.</li>
-                        <li>{{$data['row']->pam_vat}}</li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-6 footer-text">
-                    <ul class="">
-                        <li>{{$data['row']->phone}}</li>
-                        <li>{{$data['row']->gmail}}</li>
-                    </ul>
-                </div>
-
             </div>
-
         </div>
     </div>
 </footer>
-<!-- Optional JavaScript; choose one of the two! -->
+
+<script src="{{asset('frontend/assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="{{asset('frontend/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/popper.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+<!-- Jquery Mobile Menu -->
+<script src="{{asset('frontend/assets/js/jquery.slicknav.min.js')}}"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="{{asset('frontend/assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/slick.min.js')}}"></script>
+<!-- Date Picker -->
+<script src="{{asset('frontend/assets/js/gijgo.min.js')}}"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="{{asset('frontend/assets/js/wow.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/animated.headline.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery.magnific-popup.js')}}"></script>
+
+<!-- Breaking New Pluging -->
+<script src="{{asset('frontend/assets/js/jquery.ticker.js')}}"></script>
+<script src="{{asset('frontend/assets/js/site.js')}}"></script>
+
+<!-- Scrollup, nice-select, sticky -->
+<script src="{{asset('frontend/assets/js/jquery.scrollUp.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery.nice-select.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery.sticky.js')}}"></script>
 
 
+<!-- Jquery Plugins, main Jquery -->
+<script src="{{asset('frontend/assets/js/plugins.js')}}"></script>
+<script src="{{asset('frontend/assets/js/main.js')}}"></script>
+<script src="{{asset('frontend/assets/js/tab-togle.js')}}"></script>
+<script src="{{asset('frontend/assets/js/post-tab.js')}}"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="{{asset('frontend/assets/js/contact.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery.form.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery.validate.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/mail-script.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery.anarchism.min.js')}}"></script>
 
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+
+<!-- <script src="assets/js/post-tab.js"></script> -->
+
+<!-- Footer End-->
+
+
+<!-- JS here -->
+
 </body>
 
 </html>

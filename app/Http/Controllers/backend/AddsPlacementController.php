@@ -95,5 +95,12 @@ class AddsPlacementController extends Controller
         }
         return redirect()->route('placement.index');
     }
+    public function ChangePlacementStatus(Request $request){
 
+        $data['rows'] = AddPlacement::find($request->row_id);
+        $data['rows'] -> status=$request->status;
+        $data['rows']  ->save();
+
+
+    }
 }

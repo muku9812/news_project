@@ -45,7 +45,7 @@
 {{--                                    @endif--}}
 {{--                                </td>--}}
                                 <td>
-                                    <input data-id="{{$row->id}}" class="toggle-class-r1" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="Deactive" {{ $row->status ? 'checked' : '' }} >
+                                    <input data-id="{{$row->id}}" class="toggle-class-pl1" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="Deactive" {{ $row->status ? 'checked' : '' }} >
                                 </td>
 
                                 <td>

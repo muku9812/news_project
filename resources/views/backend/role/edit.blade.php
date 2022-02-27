@@ -38,7 +38,7 @@
 
                         <div class="form-group">
                             <label for="key">Key</label>
-                            <input type="number" class="form-control" placeholder="Enter role to add " name="key" id="key" value="{{$data['row']->key}}" >
+                            <input type="number" class="form-control" name="key" id="key" value="{{$data['row']->key}}" >
                             @error('key')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror

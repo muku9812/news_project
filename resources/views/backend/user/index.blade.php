@@ -54,7 +54,7 @@
 
                                     <td>
                                         <a href="#" class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>
+{{--                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-pencil-alt" aria-hidden="true"></i></a>--}}
 {{--                                        <form action="{{route('role.destroy',$row->id)}}" method="post" class="d-inline">--}}
 {{--                                            <input type="hidden" name="_method" value="delete" />--}}
 {{--                                            @csrf--}}

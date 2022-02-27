@@ -29,6 +29,10 @@ class NewsRequest extends FormRequest
             'image_file' => 'required',
             'category_id' => 'required',
             'description'=>'required',
+            'meta_tag'=>'required',
+            'meta_description'=>'required',
+            'pradesh'=>'required',
+            'short_description'=>'required',
 
 
         ];
